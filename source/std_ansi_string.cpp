@@ -121,7 +121,7 @@ ansi_string &  ansi_string::rtrim( )
    {
       if( *c != 0x20 )
       {
-         assign( buffer.begin( ), c );
+         assign( buffer.begin( ), c + 1 );
          return *this;
       }
    }
