@@ -23,7 +23,7 @@
     <ProjectGuid>{2B027416-8FCB-4D10-9BD6-15FD186F39D0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>libaulstring</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -105,6 +105,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\projects\libaulstring\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -146,15 +147,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\std_ansi_string.cpp" />
-    <ClCompile Include="source\std_string_convert.cpp" />
-    <ClCompile Include="source\std_unicode_string.cpp" />
+    <ClCompile Include="source\std_convert_string.cpp" />
+    <ClCompile Include="source\std_aulstring.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\std_ansi_string.hpp" />
     <ClInclude Include="include\std_aulstring.hpp" />
-    <ClInclude Include="include\std_string_convert.hpp" />
-    <ClInclude Include="include\std_unicode_string.hpp" />
+    <ClInclude Include="include\std_convert_string.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
