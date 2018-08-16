@@ -18,15 +18,19 @@
 #include <ostream>
 #include <istream>
 #include <cstdarg>
+#include <memory>
 #include <std_convert_string.hpp>
 //-----------------------------------------------------------------------------------------------//
 namespace std
 {
    namespace aul
    {
-      template <typename type_t = enable_if<type_t == wchar_t, type_t>::type>
+      template <typename type_t = enable_if<is_same<type_t, wchar_t>::value, type_t>::type>
       class string : public basic_string<type_t>
       {
+      public:
+         using pointer = shared_ptr<string>;
+
       public:
          //-----------------------------------------------------------------------------------------------//
          string() : basic_string<type_t>{}
@@ -93,9 +97,19 @@ namespace std
             return this->data();
          }
          //-----------------------------------------------------------------------------------------------//
+         __inline operator const char *()
+         {
+            return convert::to_multiple_byte<wchar_t>(*this).data();
+         }
+         //-----------------------------------------------------------------------------------------------//
          __inline operator basic_string<type_t>()
          {
             return *this;
+         }
+         //-----------------------------------------------------------------------------------------------//
+         __inline operator basic_string<char>()
+         {
+            return convert::to_multiple_byte<wchar_t>(*this);
          }
          //-----------------------------------------------------------------------------------------------//
          __inline operator string()
@@ -152,6 +166,12 @@ namespace std
             va_end(args);
             return *this;
          }
+         //-----------------------------------------------------------------------------------------------//
+         __inline pointer to_pointer()
+         {
+            return make_shared<string<type_t>>(*this);
+         }
+         //-----------------------------------------------------------------------------------------------//
       };
    }
 }

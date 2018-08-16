@@ -20,7 +20,7 @@ namespace std
 {
    namespace convert
    {
-      template <typename from = enable_if<from == wchar_t, from>::type>
+      template <typename from = enable_if<is_same<from, wchar_t>::value, from>::type>
       struct to_multiple_byte : public basic_string<char>
       {
          to_multiple_byte() = delete;
@@ -43,7 +43,7 @@ namespace std
          }
       };
       //-----------------------------------------------------------------------------------------------//
-      template <typename from = enable_if<from == char, from>::type>
+      template <typename from = enable_if<is_same<from, char>::value, from>::type>
       struct to_wide : public basic_string<wchar_t>
       {
          to_wide() = delete;

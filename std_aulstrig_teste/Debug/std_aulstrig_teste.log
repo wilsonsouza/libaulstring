@@ -1,17 +1,1 @@
-﻿  std_aulstrig_teste.cpp
-c:\projects\libaulstring\include\std_aulstring.hpp(157): error C2064: term does not evaluate to a function taking 1 arguments
-  c:\projects\libaulstring\std_aulstrig_teste\std_aulstrig_teste.cpp(58): note: see reference to function template instantiation 'container_t std::aul::string<wchar_t>::to_container<std::vector<std::aul::string<wchar_t>,std::allocator<_Ty>>,std::aul::string<wchar_t>>(const type_t &)' being compiled
-          with
-          [
-              container_t=std::vector<std::aul::string<wchar_t>,std::allocator<std::aul::string<wchar_t>>>,
-              _Ty=std::aul::string<wchar_t>,
-              type_t=wchar_t
-          ]
-  c:\projects\libaulstring\std_aulstrig_teste\std_aulstrig_teste.cpp(57): note: see reference to function template instantiation 'container_t std::aul::string<wchar_t>::to_container<std::vector<std::aul::string<wchar_t>,std::allocator<_Ty>>,std::aul::string<wchar_t>>(const type_t &)' being compiled
-          with
-          [
-              container_t=std::vector<std::aul::string<wchar_t>,std::allocator<std::aul::string<wchar_t>>>,
-              _Ty=std::aul::string<wchar_t>,
-              type_t=wchar_t
-          ]
-c:\projects\libaulstring\include\std_aulstring.hpp(162): error C2064: term does not evaluate to a function taking 1 arguments
+﻿  std_aulstrig_teste.vcxproj -> C:\projects\common\libaulstring\Debug\std_aulstrig_teste.exe
