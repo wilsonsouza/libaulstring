@@ -69,7 +69,7 @@ namespace std
             //convert 
             std::transform(temp.begin(), temp.end(), std::back_inserter(*this), [](const type_t & c)
             {
-               return std::_towupper(c);
+               return towupper(c);
             });
             return *this;
          }
@@ -82,7 +82,7 @@ namespace std
             //convert
             std::transform(temp.begin(), temp.end(), std::back_inserter(*this), [](const type_t & c)
             {
-               return std::_towlower(c);
+               return towlower(c);
             });
             return *this;
          }
