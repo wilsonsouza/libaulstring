@@ -2,7 +2,14 @@
 Create by wilson.souza (c) 2016, 2017, 2018
 Version 0.2-beta
 This library was create with full support of c++14.
-Has full inherintace of STL template string and wstring class.
+Has full compatibilidad with class basic_string<type_t> of STL.
+
+added more methods: 10-1-2018
+to_pointer() -> transform an reference at one smart shared memory pointer.
+copy_alloc() -> copy the string via reference and alloc one smart shared memory pointer.
+
+corrections made: 10-1-2018
+method to_value<T>() value return check fixed up.
 
 classes: namespace std::convert
 	to_multiple_byte<typename wchar_t> - return basic_string<char>

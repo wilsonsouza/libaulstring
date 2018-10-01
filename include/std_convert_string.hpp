@@ -9,6 +9,7 @@
 *  Created jun 12 2016
 *  Last updated jul 25 2018
 *  8-7-2018 modified to template class
+*  9-30-2018 fix validation to template enable_if
 *  Version 0.1-beta
 */
 #pragma once
@@ -20,7 +21,7 @@ namespace std
 {
    namespace convert
    {
-      template <typename from = enable_if<is_same<from, wchar_t>::value, from>::type>
+      template <typename from, typename enable_if<is_same<from, wchar_t>::value, from>::type = 0>
       struct to_multiple_byte : public basic_string<char>
       {
          to_multiple_byte() = delete;
@@ -37,13 +38,13 @@ namespace std
             });
          }
          //-----------------------------------------------------------------------------------------------//
-         __inline operator basic_string<value_type>()
+         operator basic_string<value_type>()
          {
             return basic_string<value_type>(*this);
          }
       };
       //-----------------------------------------------------------------------------------------------//
-      template <typename from = enable_if<is_same<from, char>::value, from>::type>
+      template <typename from, typename enable_if<is_same<from, char>::value, from>::type = 0>
       struct to_wide : public basic_string<wchar_t>
       {
          to_wide() = delete;
@@ -58,7 +59,7 @@ namespace std
             });
          }
          //-----------------------------------------------------------------------------------------------//
-         __inline operator basic_string<value_type>()
+         operator basic_string<value_type>()
          {
             return basic_string<value_type>(*this);
          }
